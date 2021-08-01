@@ -9,7 +9,7 @@ func _ready():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear2db(0.8))	
 	$EnemyManager.set_disabled(false)
 
-func _on_GameOver_restart_pressed():
+func _on_restart_pressed():
 	var _new_scene = get_tree().reload_current_scene()
 
 func game_over():

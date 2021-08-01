@@ -86,4 +86,4 @@ visible = false
 [connection signal="player_killed_enemy" from="EnemyManager" to="." method="_on_EnemyManager_player_killed_enemy"]
 [connection signal="timeout" from="EnemyManager/EnemySpawnTimer" to="EnemyManager" method="_on_EnemySpawnTimer_timeout"]
 [connection signal="volume_slider_value_changed" from="GUI/PauseMenu" to="." method="_on_volume_changed"]
-[connection signal="restart_pressed" from="GUI/GameOver" to="." method="_on_GameOver_restart_pressed"]
+[connection signal="restart_pressed" from="GUI/GameOver" to="." method="_on_restart_pressed"]

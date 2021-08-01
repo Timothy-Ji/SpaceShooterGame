@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://fonts/Heading1.tres" type="DynamicFont" id=1]
-[ext_resource path="res://fonts/Heading2.tres" type="DynamicFont" id=2]
-[ext_resource path="res://fonts/Standard.tres" type="DynamicFont" id=3]
-[ext_resource path="res://menus/PauseMenu.gd" type="Script" id=4]
+[ext_resource path="res://fonts/Heading2.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/Standard.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/Heading1.tres" type="DynamicFont" id=3]
+[ext_resource path="res://pause/PauseMenu.gd" type="Script" id=4]
 
 [node name="PauseMenu" type="MarginContainer"]
 pause_mode = 2
@@ -23,21 +23,50 @@ color = Color( 0, 0, 0, 0.67451 )
 margin_right = 1024.0
 margin_bottom = 600.0
 
-[node name="GameInfo" type="Label" parent="GameInfoContainer"]
+[node name="GameInfo" type="VBoxContainer" parent="GameInfoContainer"]
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -41.0
-custom_fonts/font = ExtResource( 3 )
-text = "Version 0.1.1
-Developers: Timothy Ji & Andrew Chu"
+margin_top = -65.0
+margin_right = 416.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Version" type="Label" parent="GameInfoContainer/GameInfo"]
+margin_right = 464.0
+margin_bottom = 19.0
+custom_fonts/font = ExtResource( 2 )
+text = "Version 0.1.1"
+
+[node name="Developers" type="Label" parent="GameInfoContainer/GameInfo"]
+margin_top = 23.0
+margin_right = 464.0
+margin_bottom = 42.0
+custom_fonts/font = ExtResource( 2 )
+text = "Developers: Timothy Ji & Andrew Chu"
+
+[node name="Github" type="HBoxContainer" parent="GameInfoContainer/GameInfo"]
+margin_top = 46.0
+margin_right = 464.0
+margin_bottom = 65.0
+
+[node name="Label" type="Label" parent="GameInfoContainer/GameInfo/Github"]
+margin_right = 91.0
+margin_bottom = 19.0
+custom_fonts/font = ExtResource( 2 )
+text = "Github Page:"
+
+[node name="LinkButton" type="LinkButton" parent="GameInfoContainer/GameInfo/Github"]
+margin_left = 95.0
+margin_right = 460.0
+margin_bottom = 19.0
+custom_fonts/font = ExtResource( 2 )
+text = "https://github.com/Timothy-Ji/SpaceShooterGame"
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 margin_right = 1024.0
 margin_bottom = 600.0
+mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 437.0
@@ -48,7 +77,7 @@ margin_bottom = 348.0
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_right = 150.0
 margin_bottom = 43.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "Paused"
 align = 1
 
@@ -61,7 +90,7 @@ rect_min_size = Vector2( 150, 0 )
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/VolumeControls"]
 margin_right = 150.0
 margin_bottom = 29.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
 text = "Volume"
 align = 1
 
@@ -75,4 +104,5 @@ value = 0.8
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="GameInfoContainer/GameInfo/Github/LinkButton" to="." method="_on_GithubLinkButton_pressed"]
 [connection signal="value_changed" from="CenterContainer/VBoxContainer/VolumeControls/Slider" to="." method="_on_VolumeSlider_value_changed"]

@@ -8,6 +8,7 @@ var gameover = false
 func _ready():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear2db(0.8))	
 	$EnemyManager.set_disabled(false)
+	$GUI/HUD/PlayerBar.set_player($Player)
 
 func _on_restart_pressed():
 	var _new_scene = get_tree().reload_current_scene()

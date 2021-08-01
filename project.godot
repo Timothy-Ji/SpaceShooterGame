@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Hitpoints",
 "language": "GDScript",
 "path": "res://Hitpoints.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://player/Player.gd"
 } ]
 _global_script_class_icons={
-"Hitpoints": ""
+"Hitpoints": "",
+"Player": ""
 }
 
 [application]
@@ -23,6 +29,14 @@ _global_script_class_icons={
 config/name="Space Shooter"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/dpi/allow_hidpi=true
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [input]
 

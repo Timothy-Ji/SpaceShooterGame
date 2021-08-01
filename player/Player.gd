@@ -1,3 +1,4 @@
+class_name Player
 extends KinematicBody2D
 
 signal direction_changed(new_direction)
@@ -5,17 +6,7 @@ signal direction_changed(new_direction)
 export var speed = 200
 var velocity = Vector2.ZERO
 
-func set_health(value):
-	return $Health.set_hp(value)
-
-func set_max_health(value):
-	return $Health.set_max_hp(value)
-
-func get_health():
-	return $Health.get_hp()
-
-func get_max_health():
-	return $Health.get_max_hp()
+onready var health: Hitpoints = $Health
 
 func _process(_delta):
 	if Input.is_action_pressed("shoot"):
@@ -51,8 +42,8 @@ func dampen(strength):
 	velocity -= velocity * strength
 	
 func damage(_source, amount):
-	$Health.subtract(amount)
-	if $Health.get_hp() <= 0:
+	health.subtract(amount)
+	if health.get_value() <= 0:
 		kill()
 		
 func kill():

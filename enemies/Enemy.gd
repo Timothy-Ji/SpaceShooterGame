@@ -31,7 +31,7 @@ func dampen(strength):
 func damage(source, amount):
 	$Health.subtract(amount)
 	emit_signal("damaged", source, amount)
-	if $Health.get_hp() == 0:
+	if $Health.get_value() == 0:
 		kill(source)
 	
 func set_target(new_target):

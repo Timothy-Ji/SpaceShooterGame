@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://enemies/death/EnemyDeath.tscn" type="PackedScene" id=1]
+
+[node name="SuicideBomberEnemyDeath" instance=ExtResource( 1 )]
+death_camera_shake = 0.3
+
+[node name="CPUParticles2D" parent="." index="0"]
+hue_variation = 0.01
+hue_variation_random = 0.5

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://player/Player.gd" type="Script" id=1]
+[ext_resource path="res://projectiles/source/ProjectileSource.tscn" type="PackedScene" id=2]
+[ext_resource path="res://projectiles/bullet/Bullet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Hitpoints.gd" type="Script" id=4]
+[ext_resource path="res://player/spaceship.png" type="Texture" id=5]
+
+[node name="Player" type="KinematicBody2D" groups=[
+"dampenable",
+]]
+collision_mask = 15
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 22, -24, -8, -30, -16, -30, -30, -16, -30, 16, -16, 30, -8, 30, 22, 25, 31, 0 )
+
+[node name="BulletSource" parent="." instance=ExtResource( 2 )]
+position = Vector2( 22, -22 )
+projectile = ExtResource( 3 )
+fire_rate = 5
+
+[node name="BulletSource2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 22, 22 )
+projectile = ExtResource( 3 )
+fire_rate = 5
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource( 4 )

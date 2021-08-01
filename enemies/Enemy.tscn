@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://enemies/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://enemies/FaceTarget.gd" type="Script" id=2]
+[ext_resource path="res://enemies/death/EnemyDeath.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Hitpoints.gd" type="Script" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 64.0
+
+[node name="Enemy" type="KinematicBody2D" groups=[
+"dampenable",
+"enemy",
+"has_health",
+]]
+script = ExtResource( 1 )
+death_scene = ExtResource( 3 )
+drift_strength = 0.35
+
+[node name="FaceTarget" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="PersonalSpace" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PersonalSpace"]
+shape = SubResource( 1 )
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource( 4 )
+[connection signal="body_entered" from="PersonalSpace" to="." method="_on_PersonalSpace_body_entered"]
+[connection signal="body_exited" from="PersonalSpace" to="." method="_on_PersonalSpace_body_exited"]

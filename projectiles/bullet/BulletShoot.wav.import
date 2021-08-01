@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BulletShoot.wav-d61b3fac96b8f18f3aad9096a75d4f77.sample"
+
+[deps]
+
+source_file="res://projectiles/bullet/BulletShoot.wav"
+dest_files=[ "res://.import/BulletShoot.wav-d61b3fac96b8f18f3aad9096a75d4f77.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

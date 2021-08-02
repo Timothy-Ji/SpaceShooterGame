@@ -30,6 +30,9 @@ func _physics_process(delta):
 	if movement != Vector2.ZERO:
 		velocity += movement * speed * delta
 		emit_signal("direction_changed", movement)
+		$AnimationPlayer.play("moving")
+	else:
+		$AnimationPlayer.play("idle")
 	
 	velocity = move_and_slide(velocity)
 	velocity -= velocity * delta

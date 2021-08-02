@@ -16,5 +16,5 @@ __meta__ = {
 [node name="PlayerBar" parent="." instance=ExtResource( 1 )]
 margin_left = 16.0
 margin_top = 16.0
-margin_right = 1008.0
-margin_bottom = 584.0
+margin_right = 1264.0
+margin_bottom = 704.0

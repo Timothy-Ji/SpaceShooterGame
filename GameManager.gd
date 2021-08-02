@@ -16,9 +16,9 @@ func _on_restart_pressed():
 func game_over():
 	gameover = true
 	$EnemyManager.set_disabled(true)	
-	remove_child($Player)
 	$GUI/GameOver.init(score)
 	emit_signal("game_over")
+	remove_child($Player)
 
 func _on_Player_tree_exited():
 	$MainCamera.add_shake(1)

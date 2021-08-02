@@ -6,7 +6,6 @@ var score = 0
 var gameover = false
 
 func _ready():
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear2db(0.8))	
 	$EnemyManager.set_disabled(false)
 	$GUI/HUD/PlayerBar.set_player($Player)
 
@@ -26,6 +25,3 @@ func _on_Player_tree_exited():
 
 func _on_EnemyManager_player_killed_enemy():
 	score += 1
-
-func _on_volume_changed(value):
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear2db(value))

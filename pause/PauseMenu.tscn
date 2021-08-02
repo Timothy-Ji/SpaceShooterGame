@@ -104,5 +104,6 @@ value = 0.8
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="visibility_changed" from="." to="." method="_on_PauseMenu_visibility_changed"]
 [connection signal="pressed" from="GameInfoContainer/GameInfo/Github/LinkButton" to="." method="_on_GithubLinkButton_pressed"]
 [connection signal="value_changed" from="CenterContainer/VBoxContainer/VolumeControls/Slider" to="." method="_on_VolumeSlider_value_changed"]
